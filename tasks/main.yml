@@ -3,10 +3,9 @@
 - name: set creds for infoblox
   set_fact:
     nios_provider:
-      username: "{{ nonprod_user }}"
-      password: "{{ nonprod_password }}"
-      host: "{{ nonprod_server }}"
-  when: vm_env is search("np")
+      username: "{{ user }}"
+      password: "{{ password }}"
+      host: "{{ server }}"
   tags: infoblox
 
 - name: Remove host record requiring fqdn "{{ vm_fqdn|lower }}"
